@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CONTACT US</title>
+</head>
+<body>
+<br>
+<br>
+<div class="d-flex justify-content-around">
+	<%= link_to "< BACK", root_path, class: 'button-back' %>
+	<h2 class="text-center" style="color: white">CONTACT US</h2>
+	<p style="color: white;">back</p>
+</div>
+<h2 class="text-center">CONTACT US</h2>
+<p class="text-center">
+	We will come back to you within 24 hours.
+</p>
+
+<br>
+<div class="container">
+	<%= form_with(model: Email.new, url: emails_path, id: "emailForm") do |form| %>
+  <div class="form-group">
+    <%= form.text_field :user_email, class: "form-control", placeholder: "Your Email" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.text_field :phone, class: "form-control", placeholder: "Your Phone (optional)" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.text_area :content_of_email, class: "form-control", placeholder: "Content of Email" %>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center">
+  	<%= form.submit "SEND", class: "btn btn-primary w-100" %>	
+  </div>
+  
+<% end %>
+
+</div>
+	
+
+</body>
+</html>
+
